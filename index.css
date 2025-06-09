@@ -1,0 +1,1024 @@
+:root{
+    --maroon: #790000;
+    --faded: #1c2124;
+    --crayola: #f8ad1e;
+    --dark-gray: #212427;
+    --oil-black: #0c0c0c;
+    --eerie-black: #232023;
+    --oxford-blue: #212a37;
+    --dutch-white: #eed6bb;
+    --papaya-whip: #fdf0f5;
+    --american-red: #b11e31;
+    --prussian-blue: #003049;
+    --cadmium-purple: #c1111f;
+    --cerulean-frost: #669bbc;
+    --charcoal-black: #121212;
+    --black-chocolate: #100d08;
+    --dark-spring-green: #166138;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 255, 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff00;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--papaya-whip);
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sideBar{
+    width: 12%;
+    height: 100vh;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-right: 1px solid #84848425;  
+}
+/*end of sidebar css*/
+
+/*the first div in sideBar is profileDiv*/
+
+.profileDiv{
+    width: 98%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-bottom: 1px solid #84848425;
+}
+
+.userDisplay{
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.userImage{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--oxford-blue);
+}
+
+.userName{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.userRating{
+    width: 60px;
+    height: 20px;
+    display: flex;
+    padding: auto;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px;
+    justify-content: space-around;
+    border: 1px solid #84848425;
+}
+
+.userRating h4{
+    font-weight: 600;
+}
+/*end of profileDiv*/
+
+/*the second div in sideBar is generalDiv*/
+
+/*start of generalDiv css*/
+.generalDiv{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.generalDiv h3{
+    height: 10px;
+    color: #84848463;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.linkList{
+    width: 90%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.linkList ul{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.linkList li{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 29px;
+    border-radius: 12px;
+    user-select: none;
+    font-weight: 500;
+    align-items: center;
+    justify-content: start;
+    color: #84848463;
+    transition: all .3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.linkList svg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.linkList li:hover{
+    color: #00000075;
+    background-color: #35363911;
+}
+/*this is the end of the generalDiv css*/
+
+/*the third div in sidebar is travelDiv*/
+
+/*start of travelDiv css*/
+.travelDiv{
+    width: 97%;
+    display: flex;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    border-radius: 12px;
+    user-select: none;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border:  1px solid #84848425;
+}
+
+.headerDiv{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    color: #84848463;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom:  1px solid #8484841a;
+}
+
+.headerDiv h3{
+    margin-left: 10px;
+}
+
+.headerDiv svg{
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.servicesList{
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.servicesList ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    align-items: center;
+    list-style-type: none;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.servicesList li{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 12px;
+    user-select: none;
+    font-weight: 500;
+    align-items: center;
+    justify-content: start;
+    color: #84848463;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.servicesList svg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.servicesList li:hover {
+    color: #1a1a1a96;
+    background-color: #35363911; /* Light green background */
+    transition: background-color 0.3s ease;
+}
+/*this the end of travelDiv css*/
+
+/*the fourth div in sidebar is weatherDiv*/
+
+/*start of weatherDiv css*/
+.weatherDiv{
+    width: 97%;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    border-radius: 12px;
+    user-select: none;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border:  1px solid #84848425;
+}
+
+.headerWDiv{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    color: #84848463;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-bottom:  1px solid #8484841a;
+}
+
+.headerWDiv h3{
+    margin-left: 10px;
+}
+
+.headerWDiv svg{
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}   
+
+.headerWDiv svg {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.weatherDetails{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.weatherIcon{
+    width: 96%;
+    height: 170px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    color: var(--prussian-blue);
+}
+
+#weatherIconSvg{
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weatherIcon svg {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    fill: #4a90e2; /* Blue color for the ellipse */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weatherIcon ellipse {
+    fill: #4a90e2; /* Blue color for the ellipse */
+}
+
+.weatherIcon circle {
+    fill: #f5a623; /* Orange color for the circle */
+}
+
+.weatherIcon h3{
+    margin: 0;
+    padding: 0;
+    color: #84848463;
+    font-size: 32px;
+}
+
+.weatherIcon h4{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.weatherInfo p{
+    color: #84848463;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.weatherIcon:hover{
+    color: #0000008c;
+    cursor: pointer;
+    background-color: #35363911;
+}
+
+.weatherInfo{
+    width: 90%;
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 7px;
+    user-select: none;
+    font-weight: 500;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #84848463;
+    transition: all .3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.weatherInfo:hover{
+    color: #000000;
+    background-color: #35363911;
+}
+/*this is the end of weatherDiv css*/
+
+/*the fifth div in sidebar is logoutDiv*/
+
+/*start of logoutDiv css*/
+.logoutDiv{
+    width: 90%;
+    height: 35px;
+    display: flex;
+    user-select: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    padding-left: 10px;
+    color: #84848463;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.logoutDiv svg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logoutDiv:hover{
+    color: #0000008c;
+    background-color: #35363911;
+}
+/*this is the end of logoutDiv css*/
+
+/*end of sidebar css*/
+
+/*Start of mainBar css*/
+.mainBar{
+    width: 88%;
+    height: 100vh;
+    display: flex;
+    padding-left: 20px;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dashboardLink, .flightDiv, .hotelDiv, .tourDiv, .hireDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*start of topDiv css*/
+.topDiv{
+    width: 97%;
+    height: 80px;
+    display: flex;
+    margin: 10px;
+    user-select: none;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-bottom:  1px solid #8484841a;
+}
+
+.progressDiv{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    font-weight: bold;
+    color: #9e9e9ea1;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.progressDiv svg{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.toggleDiv{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    color: #9e9e9ea1;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.inputDiv{
+    width: 310px;
+    height: 35px;
+    display: flex;
+    position: relative;
+    border-radius: 24px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    background-color: #8484841a;
+}
+
+.inputDiv input{
+    width: 210px;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 24px 0 0 24px;
+    margin-right: 10px;
+    background-color: #00000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inputDiv input{
+    background-color: #00000000;
+}
+
+.optionList{
+    width: 80px;
+    height: 28px;
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+    color: var(--papaya-whip);
+    border-radius: 14px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    transition: all background-color 0.3s ease;
+    background-color: lightsteelblue;
+}
+
+.optionList:hover{
+    background-color: #003049;
+}
+
+.logoDiv{
+    width: auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.logoDiv img{
+    width: 40px;
+    height: auto;
+}
+
+.results {
+    position: absolute;
+    width: 250px;
+    overflow: hidden;
+    background-color: #b6b6b6;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: -210px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.category-title {
+    font-weight: bold;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    color: var(--cerulean-frost);
+}
+
+.result-item {
+    padding: 3px;
+    color: var(--papaya-whip);
+    cursor: pointer;
+    margin-top: 2px;
+    border-radius: 9px;
+}
+
+.result-item:hover{
+    color: var(--papaya-whip);
+    background-color: #3536398e;
+}
+
+.no-results {
+    font-style: italic;
+    color: #999;
+}
+
+.booking-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.itinerary-number {
+    font-style: italic;
+    color: var(--prussian-blue);
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset !important; /* Replace 'white' with your desired background color */
+    box-shadow: 0 0 0px 1000px #00000000 inset !important;
+    background-color: #00000000 !important;
+    color: inherit !important; /* Ensure the text color matches the rest of the input style */
+    caret-color: inherit;
+}
+/*end of topDiv css*/
+
+/*second and last div of mainBar*/
+
+/*start of middleDiv css*/
+.middleDiv {
+    width: 97%;
+    height: 100%;
+    display: flex;
+    margin: 10px;
+    user-select: none;
+    overflow-y: auto;
+    user-select: none;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    border-bottom: 1px solid #8484841a;
+}
+
+.leftDiv{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    padding-left: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background-color: #00000009;
+}
+
+.leftDiv p {
+    width: 500px;
+    color: #84848463;
+    text-align: center;
+    margin-right: 45%;
+}
+
+.bookingList{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    padding-left: 10px;
+    overflow: hidden;
+    overflow-x: auto;
+    padding-right: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.bookingInfo{
+    width: 240px;
+    height: 90px;
+    display: flex;
+    margin: 10px;
+    padding-left: 4px;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 6px;
+    background-color: #3536391e;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.leftDiv p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bookingList:empty + p {
+    display: block;
+}
+
+.bookingList:not(:empty) + p {
+    display: none;
+}
+
+.infoImage{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.infoImage svg{
+    width: 24px;
+    height: 24px;
+    fill: #84848463;  
+}
+
+.infoImage:hover {
+    background-color: #ffffff10; /* Slightly darker grey on hover */
+}
+
+.infoImage:hover svg {
+    fill: #4646ff; /* Black fill on hover */
+}
+
+.infoDetails{
+    width: 140px;
+    height: 70px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.infoDetails h5{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #000000;
+}
+
+.navWay{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.navWay svg{
+    width: 26px;
+    height: 26px;
+    fill: #00000075;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.navWay svg:hover{
+    fill: blue;
+}
+
+.progressBar {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    background-color: #00000022;
+    position: relative;
+}
+
+.progressIndicator {
+    height: 100%;
+    background-color: #4c82af; /* Green color for the progress */
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progressIndicator p {
+    margin: 0;
+    color: white;
+    font-size: 12px;
+    padding: 0 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*rightDiv css*/
+.rightDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.tripsView{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    background-color: #00000009;
+}
+
+.tripCard{
+    width: 280px;
+    height: 300px;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: #ffffff4b;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.tripImage{
+    width: 275px;
+    height: 210px;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.tripImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    transition: all .3s ease;
+}
+
+.tripCard h4{
+    margin: 0;
+    padding: 0;
+    margin-right: auto;
+    margin-left: 10px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #000000;
+}
+
+.tripButton{
+    width: 140px;
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    fill: #84848463;
+    cursor: pointer;
+    border-radius: 12px;
+    user-select: none;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    color: #84848463;
+    margin-right: auto;
+    margin-left: 5px;
+    transition: all .3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.tripButton svg{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tripButton:hover{
+    color: #ffffff;
+    fill: #ffffff;
+    background-color: #517dff;
+}
+
+
+.weatherForecast{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #00000009;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.weatherForecastHeader {
+    background-color: #56565600;
+    color: rgba(77, 77, 77, 0.557);
+    text-align: center;
+    width: 95%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.weatherForecastList {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #00000009;
+}
+
+.weatherForecastList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.weatherForecastList li {
+    width: 230px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffffff4b;
+}
+
+.weatherForecastList li:last-child {
+    border-bottom: none;
+}
+
+.weatherForecastList h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.weatherForecastList p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.weatherForecastList span {
+    font-weight: bold;
+    color: #333;
+}
+
+.userCredit{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #00000009;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
