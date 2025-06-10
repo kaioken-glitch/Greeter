@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//this
-const API_KEY = 'fddaf5a818268d99e88b5c836fbba450'; // Replace with your valid API Key
+
 const weatherDiv = document.querySelector(".weatherDiv");
 const headerWDiv = document.querySelector(".headerWDiv");
 const weatherDetails = document.querySelector(".weatherDetails");
@@ -165,15 +164,14 @@ function getWeatherIconSvg(iconCode) {
     return weatherIcons[iconCode] || `<svg><text x="0" y="15">No Icon</text></svg>`;
 }
 
-// Function to fetch weather data
 async function fetchWeather() {
     try {
         // Get user's location
         const position = await getUserLocation();
 
-        // Fetch weather data from API
+        // Fetch weather data from YOUR BACKEND instead of OpenWeather directly
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${API_KEY}`
+            `/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
         );
 
         if (!response.ok) {
@@ -190,7 +188,7 @@ async function fetchWeather() {
         temperature.textContent = `${Math.round(main?.temp || 0)}°C`;
 
         // Update weather icon with SVG
-        const iconCode = weather[0]?.icon; // Get icon code from API
+        const iconCode = weather[0]?.icon;
         weatherIconSvg.innerHTML = getWeatherIconSvg(iconCode);
 
     } catch (error) {
@@ -202,7 +200,6 @@ async function fetchWeather() {
     }
 }
 
-// Function to get user location
 function getUserLocation() {
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {
@@ -212,6 +209,7 @@ function getUserLocation() {
         }
     });
 }
+
 
 // Toggle dropdown functionality
 headerWDiv.addEventListener("click", () => {
@@ -560,21 +558,22 @@ function getWeatherIcon(weather) {
     }
 }
 
-async function fetchWeatherData(lat, lon) {
-    const response = await fetch(`http://localhost:3000/weather?lat=${lat}&lon=${lon}`);
+async function fetchWeatherDataFromServer(latitude, longitude) {
+    const response = await fetch(`/weather?lat=${latitude}&lon=${longitude}`);
     if (!response.ok) {
-        throw new Error('Failed to fetch weather data from backend');
+        throw new Error(`HTTP error! status: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    return data;
 }
 
 async function displayWeatherForUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
             try {
-                const weatherData = await fetchWeatherData(position.coords.latitude, position.coords.longitude);
+                const weatherData = await fetchWeatherDataFromServer(position.coords.latitude, position.coords.longitude);
                 const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-                const forecast = weatherData.daily.slice(0, 5).map((day, index) => {
+                const forecast = weatherData.daily.slice(0, 5).map((day) => {
                     const date = new Date(day.dt * 1000);
                     return {
                         day: daysOfWeek[date.getDay()],
@@ -585,7 +584,7 @@ async function displayWeatherForUserLocation() {
                 displayWeatherForecast(forecast);
             } catch (error) {
                 console.error('Error fetching weather data:', error);
-                alert('Failed to fetch weather data. Please check your API key and try again.');
+                alert('Failed to fetch weather data.');
             }
         });
     } else {
